@@ -58,6 +58,6 @@ mongoose
     console.error("❌ MongoDB connection error:", err);
   });
 
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log("connection done");
 });
