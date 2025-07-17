@@ -9,7 +9,7 @@ const cors = require("cors");
 
 router.use(
   cors({
-    origin: ["trad-zen-frontend.vercel.app", "trad-zen-dashboard.vercel.app"], // allow both ports
+    origin: ["https://tradzen-frontend-1.onrender.com", "https://tradzen-dashboard.onrender.com"], // allow both ports
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
