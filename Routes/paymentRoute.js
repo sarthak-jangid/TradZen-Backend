@@ -11,7 +11,7 @@ const verifyUser = require("../Middlewares/verifyUser");
 
 router.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"], // allow both ports
+    origin: ["trad-zen-frontend.vercel.app", "trad-zen-dashboard.vercel.app"], // allow both ports
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
