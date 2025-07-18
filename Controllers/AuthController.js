@@ -55,11 +55,11 @@ module.exports.Signup = async (req, res) => {
 
     // Set cookie
     res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: true, // Use true for security
-      secure: process.env.NODE_ENV === "production", // Secure only in production
-      sameSite: "Lax",
-      maxAge: 7 * 24 * 60 * 60 * 1000, //  7 days in milliseconds
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      // sameSite: "Lax",
+      sameSite: "None",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
     });
 
     // Send success response
@@ -127,10 +127,10 @@ module.exports.Login = async (req, res) => {
 
     // Set secure cookie
     res.cookie("token", token, {
-      withCredentials: true,
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Lax",
+      // sameSite: "Lax",
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
     });
 
@@ -158,7 +158,8 @@ module.exports.Logout = async (req, res) => {
     res.clearCookie("token", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Lax",
+      // sameSite: "Lax",
+      sameSite: "None",
     });
     return res.status(200).json({ message: "Logout successful" });
   } catch (error) {
