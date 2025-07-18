@@ -1,4 +1,5 @@
 // routes/paymentRoutes.js
+require("dotenv").config();
 const express = require("express");
 const {
   createOrder,
@@ -11,7 +12,10 @@ const verifyUser = require("../Middlewares/verifyUser");
 
 router.use(
   cors({
-    origin: ["https://tradzen-frontend-1.onrender.com", "https://tradzen-dashboard.onrender.com"], // allow both ports
+    origin: [
+      "https://tradzen-frontend-1.onrender.com",
+      "https://tradzen-dashboard.onrender.com",
+    ], // allow both ports
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
