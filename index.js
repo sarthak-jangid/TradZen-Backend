@@ -20,7 +20,11 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["https://tradzen-frontend-1.onrender.com", "https://tradzen-dashboard.onrender.com"], //  allow both ports
+    origin: [
+      "https://tradzen-frontend-1.onrender.com",
+      "https://tradzen-dashboard.onrender.com",
+      "http://localhost:5173",
+    ], //  allow both ports
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -58,6 +62,6 @@ mongoose
     console.error("❌ MongoDB connection error:", err);
   });
 
-app.listen(PORT,'0.0.0.0', () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log("connection done");
 });
