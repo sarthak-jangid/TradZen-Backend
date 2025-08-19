@@ -9,11 +9,13 @@ router.use(
       "https://tradzen-frontend-1.onrender.com",
       "https://tradzen-dashboard.onrender.com",
       "http://localhost:5173",
+      "http://localhost:5174"
     ], //  allow both ports
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 router.post("/signup", Signup);
 router.post("/login", Login);

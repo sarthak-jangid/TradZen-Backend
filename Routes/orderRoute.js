@@ -1,11 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
-const { getOrdersByUser , placeOrder } = require("../Controllers/orderController");
+const {
+  getOrdersByUser,
+  placeOrder,
+} = require("../Controllers/orderController");
 
 router.use(
   cors({
-    origin: ["https://tradzen-frontend-1.onrender.com", "https://tradzen-dashboard.onrender.com"], // ✅ allow both ports
+    origin: [
+      "https://tradzen-frontend-1.onrender.com",
+      "https://tradzen-dashboard.onrender.com",
+      "http://localhost:5173",
+      "http://localhost:5174",
+    ], // ✅ allow both ports
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
